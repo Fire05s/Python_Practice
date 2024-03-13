@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Quiz Home</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        {% for message in messages %}
+        <div class='alert alert-primary alert-dismissible fade show' role='alert'>
+            {{message}}
+            <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+        </div>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+        <div style = 'text-align: center;'>
+            <h1>Quiz Home</h1>
+            <br>
+            {% if loggedin %}
+                <form method = 'post'>
+                    <button type = 'submit' name = 'logout' id = 'logout'>Logout</button>
+                </form>
+                <br>
+            {% endif %}
+            <form method = 'post' style = 'margin-left: 20%;margin-right: 20%;background-color: lightgray;padding-left: 5%;padding-right: 5%;'>
+                <h5>Register</h5>
+                <label class = 'form-label' for = 'reguser'>Username</label>
+                <input class = 'form-control' name = 'reguser' id = 'reguser'>
+                <br>
+                <label class = 'form-label' for = 'regpass'>Password</label>
+                <input style = 'padding-left: 10%; margin-right: 10%' class = 'form-control' name = 'regpass' id = 'regpass'>
+                <br>
+                <button class = 'btn btn-primary' type = 'submit' name = 'reg' id = 'reg'>Register</button>
+            </form>
+            
+            <br>
+
+            <form method = 'post' style = 'margin-left: 20%;margin-right: 20%;background-color: lightgray;padding-left: 5%;padding-right: 5%;'>
+                <h5>Login</h5>
+                <label class = 'form-label' for = 'loguser'>Username</label>
+                <input class = 'form-control' name = 'loguser' id = 'loguser'>
+                <br>
+                <label class = 'form-label' for = 'logpass'>Password</label>
+                <input class = 'form-control' name = 'logpass' id = 'logpass'>
+                <br>
+                <button class = 'btn btn-primary' type = 'submit' name = 'log' id = 'log'>Login</button>
+            </form>
+
+            <br>
+            <br>
+            <h5>Pick the Quiz Subject you want to take.</h5>
+            <form method = 'post'>
+                <button style = 'column-span: 50%;' type = 'submit' name = 'geo' id = 'geo'>Geography</button>
+            </form>
+            {% if loggedin %}
+                <p>{{geo}} Geography Quizzes Available</p>
+                <p>You have attempted {{attgeo}}/{{geo}} Quizzes</p>
+            {% endif %}
+            <br>
+            <form method = 'post'>
+                <button type = 'submit' name = 'math' id = 'math'>Math</button>
+            </form>
+            {% if loggedin %}
+                <p>{{math}} Math Quizzes Available</p>
+                <p>You have attempted {{attmath}}/{{geo}} Quizzes</p>
+            {% endif %}
+            <br>
+            <form method = 'post'>
+                <button type = 'submit' name = 'science' id = 'science'>Science</button>
+            </form>
+            {% if loggedin %}
+                <p>{{sci}} Science Quizzes Available</p>
+                <p>You have attempted {{attsci}}/{{geo}} Quizzes</p>
+            {% endif %}
+            <br>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
+</html>

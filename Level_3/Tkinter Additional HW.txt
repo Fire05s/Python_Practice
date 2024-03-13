@@ -1,0 +1,4 @@
+Tkinter (Additional Tkinter File)
+
+Frames and Buttons:
+7. Add disabled function

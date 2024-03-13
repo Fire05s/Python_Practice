@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{subject}} Quiz</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+        <div style = 'justify-content: center; text-align: center;'>
+            <div style = 'background-color: gray;'>
+                <h1>{{subject}} Quiz</h1>
+                <br>
+                <h3>Score: {{session['score']}}</h3>
+                <br>
+                <form method = 'post'>
+                    <button class = 'btn btn-danger'type = 'submit' name = 'return' id = 'return'>Return</button>
+                </form>
+            </div>
+            <br>
+            <form method = 'post' style = 'align-content: center;'>
+                {% for question in questions['q'] %} 
+                    <div class = 'rounded-pill' style = 'background-color: lightgray; margin-left: 20%; margin-right: 20%;'>
+                        <h6>{{question['question']}}</h6>
+                        {% if session ['answers'] != [] %} 
+                            {% if question['options'][0] == session['answers'][loop.index-1] %} <!-- option is in the selected list -->
+                                {% if question['correct'] == question['options'][0] %} <!-- selected option is correct for this question -->
+                                <input type = 'radio' id = 'correct' name = '{{question["question"]}}' value = '{{question["options"][0]}}' checked>
+                                <label class = 'correct' for = '{{question["options"][0]}}'>{{question["options"][0]}}</label>
+                                {% else %} <!-- selected option is incorrect for this question -->
+                                <input type = 'radio' id = 'incorrect' name = '{{question["question"]}}' value = '{{question["options"][0]}}' checked>
+                                <label class = 'incorrect' for = '{{question["options"][0]}}'>{{question["options"][0]}}</label>
+                                {% endif %}
+                            {% else %} <!-- option is not in the selected list -->
+                                {% if question['correct'] == question['options'][0] %} <!-- this unselected option is correct -->
+                                <input type = 'radio' id = 'correct' name = '{{question["question"]}}' value = '{{question["options"][0]}}'>
+                                <label class = 'correct' for = '{{question["options"][0]}}'>{{question["options"][0]}}</label>
+                                {% else %} <!-- this is just a normal option -->
+                                <input type = 'radio' id = '{{question["options"][0]}}' name = '{{question["question"]}}' value = '{{question["options"][0]}}'>
+                                <label for = '{{question["options"][0]}}'>{{question["options"][0]}}</label>
+                                {% endif %}
+                            {% endif %}
+                            <br>
+                            {% if question['options'][1] == session['answers'][loop.index-1] %} <!-- option is in the selected list -->
+                                {% if question['correct'] == question['options'][1] %} <!-- selected option is correct for this question -->
+                                <input type = 'radio' id = 'correct' name = '{{question["question"]}}' value = '{{question["options"][1]}}' checked>
+                                <label class = 'correct' for = '{{question["options"][1]}}'>{{question["options"][1]}}</label>
+                                {% else %} <!-- selected option is incorrect for this question -->
+                                <input type = 'radio' id = 'incorrect' name = '{{question["question"]}}' value = '{{question["options"][1]}}' checked>
+                                <label class = 'incorrect' for = '{{question["options"][1]}}'>{{question["options"][1]}}</label>
+                                {% endif %}
+                            {% else %} <!-- option is not in the selected list -->
+                                {% if question['correct'] == question['options'][1] %} <!-- this unselected option is correct -->
+                                <input type = 'radio'id = 'correct' name = '{{question["question"]}}' value = '{{question["options"][1]}}'>
+                                <label class = 'correct' for = '{{question["options"][1]}}'>{{question["options"][1]}}</label>
+                                {% else %} <!-- this is just a normal option -->
+                                <input type = 'radio' id = '{{question["options"][1]}}' name = '{{question["question"]}}' value = '{{question["options"][1]}}'>
+                                <label for = '{{question["options"][1]}}'>{{question["options"][1]}}</label>
+                                {% endif %}
+                            {% endif %}
+                            <br>
+                            {% if question['options'][2] == session['answers'][loop.index-1] %} <!-- option is in the selected list -->
+                                {% if question['correct'] == question['options'][2] %} <!-- selected option is correct for this question -->
+                                <input type = 'radio' id = 'correct' name = '{{question["question"]}}' value = '{{question["options"][2]}}' checked>
+                                <label class = 'correct' for = '{{question["options"][2]}}'>{{question["options"][2]}}</label>
+                                {% else %} <!-- selected option is incorrect for this question -->
+                                <input type = 'radio' id = 'incorrect' name = '{{question["question"]}}' value = '{{question["options"][2]}}' checked>
+                                <label class = 'incorrect' for = '{{question["options"][2]}}'>{{question["options"][2]}}</label>
+                                {% endif %}
+                            {% else %} <!-- option is not in the selected list -->
+                                {% if question['correct'] == question['options'][2] %} <!-- this unselected option is correct -->
+                                <input type = 'radio' id = 'correct' name = '{{question["question"]}}' value = '{{question["options"][2]}}'>
+                                <label class = 'correct' for = '{{question["options"][2]}}'>{{question["options"][2]}}</label>
+                                {% else %} <!-- this is just a normal option -->
+                                <input type = 'radio' id = '{{question["options"][2]}}' name = '{{question["question"]}}' value = '{{question["options"][2]}}'>
+                                <label for = '{{question["options"][2]}}'>{{question["options"][2]}}</label>
+                                {% endif %}
+                            {% endif %}
+                            <br>
+                            {% if question['options'][3] == session['answers'][loop.index-1] %} <!-- option is in the selected list -->
+                                {% if question['correct'] == question['options'][3] %} <!-- selected option is correct for this question -->
+                                <input type = 'radio' id = 'correct' name = '{{question["question"]}}' value = '{{question["options"][3]}}' checked>
+                                <label class = 'correct' for = '{{question["options"][3]}}'>{{question["options"][3]}}</label>
+                                {% else %} <!-- selected option is incorrect for this question -->
+                                <input type = 'radio' id = 'incorrect' name = '{{question["question"]}}' value = '{{question["options"][3]}}' checked>
+                                <label class = 'incorrect' for = '{{question["options"][3]}}'>{{question["options"][3]}}</label>
+                                {% endif %}
+                            {% else %} <!-- option is not in the selected list -->
+                                {% if question['correct'] == question['options'][3] %} <!-- this unselected option is correct -->
+                                <input type = 'radio' id = 'correct' name = '{{question["question"]}}' value = '{{question["options"][3]}}'>
+                                <label class = 'correct' for = '{{question["options"][3]}}'>{{question["options"][3]}}</label>
+                                {% else %} <!-- this is just a normal option -->
+                                <input type = 'radio' id = '{{question["options"][3]}}' name = '{{question["question"]}}' value = '{{question["options"][3]}}'>
+                                <label for = '{{question["options"][3]}}'>{{question["options"][3]}}</label>
+                                {% endif %}
+                            {% endif %}
+                            <br>
+                        {% else %} <!-- first attempt/nothing previously selected -->
+                            <input type = 'radio' id = '{{question["options"][0]}}' name = '{{question["question"]}}' value = '{{question["options"][0]}}'>
+                            <label for = '{{question["options"][0]}}'>{{question["options"][0]}}</label>
+                            <br>
+                            <input type = 'radio' id = '{{question["options"][1]}}' name = '{{question["question"]}}' value = '{{question["options"][1]}}'>
+                            <label for = '{{question["options"][1]}}'>{{question["options"][1]}}</label>
+                            <br>
+                            <input type = 'radio' id = '{{question["options"][2]}}' name = '{{question["question"]}}' value = '{{question["options"][2]}}'>
+                            <label for = '{{question["options"][2]}}'>{{question["options"][2]}}</label>
+                            <br>
+                            <input type = 'radio' id = '{{question["options"][3]}}' name = '{{question["question"]}}' value = '{{question["options"][3]}}'>
+                            <label for = '{{question["options"][3]}}'>{{question["options"][3]}}</label>
+                            <br>
+                        {% endif %}
+                    </div>
+                    <br>
+                {% endfor %}
+                {% if session['answers'] != [] %}
+                    <button class = 'btn btn-primary' type = 'submit' id = 'nextquiz' name = 'nextquiz'>Next {{subject}} Quiz</button>
+                {% else %}
+                    <button class = 'btn btn-primary' type = 'submit' id = 'quizsubmit' name = 'quizsubmit'>Submit Quiz</button>
+                {% endif %}
+            </form>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
+    <script>
+        // try {
+        //     for (let loop = 0; loop < "{{session['answers']}}".length; loop++) {
+        //         const element = document.getElementById ("{{session['answers'][loop]}}");
+        //         console.log (element);
+        //         console.log ("{{session['answers']}}");
+        //         if ( == ("{{session['answers'][loop]}}")) {
+        //         element.style.color = 'green';
+        //         }
+        //         else {
+        //             element.style.color = 'red';
+        //         }
+        //     }
+        // } finally {
+        //     console.log ('done');
+        // }
+        const corrElements = document.getElementsByClassName ("correct");
+        for (let loop1 = 0; loop1 < corrElements.length; loop1++) {
+            const corrElement = corrElements[loop1];
+            corrElement.style.color = "green";
+        }
+        const incElements = document.getElementsByClassName ("incorrect");
+        for (let loop2 = 0; loop2 < incElements.length; loop2++) {
+            const incElement = incElements[loop2];
+            incElement.style.color = "red";
+        }
+    </script>
+</html>
