@@ -1,0 +1,14 @@
+Lists , Dictionary
+Create 2 lists. One with the days of the week and another with your after-school activities. Using the lists, create a dictionary containing the days of the week associated with the corresponding activity.
+
+Dictionary
+Create a dictionary with the animals - dogs, cats, elephants, ducks and lions - as the keys. Assign empty strings to be their values. In a loop, ask for their sounds one by one and change their corresponding values in the dictionary. Print the dictionary.
+
+Dictionary
+Create a dictionary of (student, score) pairs where the student is the key and the score refers to the marks he/she got in a subject.
+a) Increase the marks of each student by 5.Tip: d[student] = newValue
+b) Replace the marks of each student with the corresponding grade.
+c) Delete the student data for those who scored an F.
+
+Dictionary
+Create a dictionary. Ask the user to enter a number. It will be considered as his account number. Ask for the initial deposit. Store it as the value of the key in the dictionary with the account number as the key. Print the balance on the screen.Ask the user which action he wants to perform: Add Money or Withdraw Money.Update the balance after asking the amount that needs to be added or withdrawn.

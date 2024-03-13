@@ -1,0 +1,1 @@
+Use the already made program, to make blinking (circles switching between white and yellow) "stars" that fall.

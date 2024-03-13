@@ -1,0 +1,23 @@
+Dictionary Analytics
+Let's pick a word file using the following command in the terminal:
+
+We get http://www.mit.edu/~ecprice/wordlist.100000
+This contains all the words in the English dictionary. (Or a lot of them at least.)
+
+Write a function that returns the exact number of words in the file.
+If the file is empty, print ‘No words found’. Otherwise, print the number of words found.
+
+Print the letter with which most words begin.
+
+Extending the previous exercise, find the letter with which maximum words begin.
+
+First find the number of words starting with 'a'.
+
+Create a dictionary using for loop, read the file one line at a time.
+If a word beginning with 'a' is found, then add an item to the dictionary with 'a' as the key and 1 as the value.
+
+If 'a' already exists in the dictionary, then increase its value.Print the dictionary.
+
+When the loop ends, the dictionary should contain the number of words starting with 'a'.
+
+Apply the same concept to get a dictionary with letters as the keys and the number of words as the values.Now you can tell with which letter most words begin.

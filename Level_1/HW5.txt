@@ -1,0 +1,5 @@
+Strings
+Ask the user to enter a STRING of numbers separated by spaces. Print the even numbers.
+
+Palindrome
+Ask the user to enter a string. Check if the reverse of the string is same as the string itself. Print ‘Given string is a palindrome’ when the condition is true. Otherwise, print ‘Given string is not a palindrome.’

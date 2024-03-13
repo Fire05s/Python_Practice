@@ -1,0 +1,1 @@
+Make a wheelbarrow (consisting of a rectangle and 2 wheels). Make it go side to side on the screen. (Hint: Use the same variable - ex. X coordinate - for all shapes to make movement easier)

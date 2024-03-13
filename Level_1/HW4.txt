@@ -1,0 +1,7 @@
+Functions can be stored and imported as a module
+
+Create functions to calculate the area of a rectangle, triangle and circle.
+Write a program that asks the user the shape (rectangle, triangle or circle) for which one wishes to calculate the area.
+Based on the user's choice, call the appropriate function.
+
+(Each function must take inputs of the required information. Create a new file called area_functions.py. Move the function definitions from the main program to the new file. Import these functions into the main program such that the behavior of the program does not change.)

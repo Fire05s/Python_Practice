@@ -1,0 +1,17 @@
+Password Check
+Using a While Loop, write a simple password check. The program should repeatedly ask for a password.
+ When the user enters the wrong password, the program should output “Access Denied!”. When the correct password is entered,
+ you should print “Access Granted” and then stop.
+
+Random Number Guessing Game
+Make the program pick a random integer between 20 and 30.In a While Loop, ask the user to guess the number until the 
+user gets it right. When the user correctly guesses the number, print the number of chances taken.
+
+while Loop using strings
+Using a While Loop, 
+keep asking the user to enter a string. Print the characters of the string in separate lines.
+
+Countdown timer Using while Loop
+Print a countdown. The program should output :Countdown timer: How many seconds?4 3 2 1 BLAST OFF!Tip:Use time.sleep(1)
+
+Print numbers from 1 to 10 and then back from 10 to 1 forever. Use only one while loop.

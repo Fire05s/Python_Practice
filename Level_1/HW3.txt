@@ -1,0 +1,21 @@
+Functions
+Write a function to generate a list of five random integers from 1 to 20, and print it.
+
+Functions with parameters:
+Write a program that asks and prints out the names of members of your family, their relationship with you, address, city, and state in a table format:
+
+Name:
+Relation:                              (Reduceable)
+Address:
+St City:
+State:
+Zip:
+
+String Reversal Function with parameters
+Make a function to reverse a string.
+
+Functions With Parameters
+Write a function to take a number as an argument and print a list of its factors.
+
+Functions
+Ask the user for a word or string.Make a function to sort the letters of the string in the order in which they occur in the English alphabet.
